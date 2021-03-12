@@ -14,8 +14,8 @@ import javax.validation.constraints.NotNull;
 public class RequestBody {
 
 	@NotNull
-	@Min(value = 80)
-	@Max(value = 85)
+	@Min(value = 20)
+	@Max(value = 40)
 	private int containerSize;
 
 	@NotNull
@@ -39,7 +39,7 @@ public class RequestBody {
 	public RequestBody() {
 	}
 
-	public RequestBody(@NotNull @Min(value = 80) @Max(value = 85) int containerSize,
+	public RequestBody(@NotNull @Min(value = 20) @Max(value = 40) int containerSize,
 			@NotNull ContainerType containerType, @NotNull @Size(min = 5, max = 20) String origin,
 			@NotNull @Size(min = 5, max = 20) String destination, @NotNull @Min(1) @Max(100) int quantity,
 			String timestamp) {
