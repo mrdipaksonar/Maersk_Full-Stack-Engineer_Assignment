@@ -20,19 +20,19 @@ public class ContainerBookingController {
 	@Autowired
 	IContainerBookingService iContainerBookingService;
 
-	@PostMapping("/checkAvailable")
+	@PostMapping("/api/bookings/checkAvailable")
 	public ResponseBody checkAvailable(
-			@Valid @org.springframework.web.bind.annotation.RequestBody RequestBody maerskRequestBody) {
+			@Valid @org.springframework.web.bind.annotation.RequestBody RequestBody requestBody) {
 
-		ResponseBody maerskResponseBody = iContainerBookingService.checkAvailable(maerskRequestBody);
+		ResponseBody maerskResponseBody = iContainerBookingService.checkAvailable(requestBody);
 		return maerskResponseBody;
 	}
 
-	@PostMapping("/saveBooking")
+	@PostMapping("/api/bookings/saveBooking")
 	public ResponseBody saveBooking(
-			@Valid @org.springframework.web.bind.annotation.RequestBody RequestBody maerskRequestBody) {
+			@Valid @org.springframework.web.bind.annotation.RequestBody RequestBody requestBody) {
 
-		ResponseBody maerskResponseBody = iContainerBookingService.saveBooking(maerskRequestBody);
+		ResponseBody maerskResponseBody = iContainerBookingService.saveBooking(requestBody);
 		return maerskResponseBody;
 	}
 }
